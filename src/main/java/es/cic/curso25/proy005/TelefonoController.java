@@ -3,6 +3,7 @@ package es.cic.curso25.proy005;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,7 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/telefono")
 public class TelefonoController { //expone urls
-
+    @Autowired //porque quiero el que cree Spring; si no, sería private TelefonoService telefonoService = new TelefonoService()
+    private TelefonoService telefonoService;
     //OJO: Esto es un arreglo momentáneo. Crear una variable aquí está prohibido.
     private int contador = 0;
     // C R U D
@@ -27,7 +29,11 @@ public class TelefonoController { //expone urls
     // C
     @PostMapping
     public long create(@RequestBody Telefono telefono) { //Spring me crea el Telefono.
-        return ++contador; //ojo, recorar que no es lo mismo que contador++ (éste último cogería contador, lo retornaría y ya
+        long id = telefonoService.create(telefono);
+
+        return id;
+        
+        //return ++contador; //ojo, recorar que no es lo mismo que contador++ (éste último cogería contador, lo retornaría y ya
                            //después sumaría uno.
     }
 

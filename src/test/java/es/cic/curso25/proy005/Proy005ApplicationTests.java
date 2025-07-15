@@ -26,7 +26,7 @@ class Proy005ApplicationTests {
 	@Test
 	void testTelefonoDelete() throws Exception {
 		mockMvc
-			.perform(delete("/telefono/4"))
+			.perform(delete("/telefono/4")) //.content("{'id': 4}".getbytes("UTF-8"))
 			.andDo(print())
 			.andExpect(status().isOk())
 			.andReturn();
