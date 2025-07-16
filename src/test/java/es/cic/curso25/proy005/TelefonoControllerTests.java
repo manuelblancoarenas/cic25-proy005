@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import es.cic.curso25.proy005.controller.TelefonoController;
+
 @SpringBootTest
 public class TelefonoControllerTests {
     @Autowired //si no la pusiera, me daría nullPointerException, puesto que en testCreate utilizaría null y no lo creado por Spring

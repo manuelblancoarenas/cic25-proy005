@@ -1,6 +1,8 @@
-package es.cic.curso25.proy005;
+package es.cic.curso25.proy005.service;
 
 import org.springframework.stereotype.Service;
+
+import es.cic.curso25.proy005.model.Telefono;
 
 @Service
 public class TelefonoService {

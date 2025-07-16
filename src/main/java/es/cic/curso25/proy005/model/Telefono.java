@@ -1,4 +1,4 @@
-package es.cic.curso25.proy005;
+package es.cic.curso25.proy005.model;
 
 public class Telefono { //clase de datos
 
